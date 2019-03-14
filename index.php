@@ -1,8 +1,11 @@
 <?php
 $templates = __DIR__ . '/templates/';
+define('BASE_DIR',__DIR__);
 ?>
 <?php
 require_once($templates . 'header.php');
+require_once (__DIR__.'/helpers/FileUpload.php');
+
 ?>
 
     <main role="main">

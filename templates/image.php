@@ -1,6 +1,6 @@
 <?php
-
-var_dump($_FILES);
+$FileUploadObj = new FileUpload();
+$FileUploadObj->saveImage('image');
 ?>
 
 

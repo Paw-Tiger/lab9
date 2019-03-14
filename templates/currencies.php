@@ -38,7 +38,7 @@ if (isset($_POST) && !empty($_POST)) {
 <div class="row">
     <div class="col-6">
         <h2>Get currencies</h2>
-        <form action="" method="post">
+        <form action="" method="post" >
             <div class="form-group">
                 <label for="baseCurrency"> Base currency</label>
                 <select name="baseCurrency" id="baseCurrency" class="form-control">
@@ -47,13 +47,15 @@ if (isset($_POST) && !empty($_POST)) {
                     <?php } ?>
                 </select>
             </div>
-            <div class="form-group">
+
                 <?php foreach ($valutes as $valute) { ?>
-                    <label class="form-check-label" for="<?= $valute ?>"><?= $valute ?></label>
+            <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="<?= $valute ?>" name="list[]"
                            value="<?= $valute ?>">
-                <?php } ?>
+                    <label class="form-check-label" for="<?= $valute ?>"><?= $valute ?></label>
             </div>
+                <?php } ?>
+
 
             <button type="submit" class="btn btn-info">GET RATES</button>
         </form>

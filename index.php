@@ -3,19 +3,21 @@ $templates = __DIR__ . '/templates/';
 define('BASE_DIR', __DIR__);
 ?>
 <?php
-require_once(__DIR__ . '/helpers/Cookie.php');
+require_once (__DIR__ . '/helpers/Session.php');
+$currentSession = new Session();
+//require_once(__DIR__ . '/helpers/Cookie.php');
+//
+//$cookieObj = new Cookie();
+//
+//if (!$cookieObj->read('PageViewCount')) {
+//    $cookieObj->create('PageViewCount', 1, time() + 2 * 60 * 60);
+//    echo "Вы впервые на нашем сайте!";
+//} else {
+//    $cookieObj->update('PageViewCount',$cookieObj->read('PageViewCount')+1,time() + 2 * 60 * 60);
+//    echo "Вы на нашем сайте " . $cookieObj->read('PageViewCount') . "  раз";
+//}
 
-$cookieObj = new Cookie();
-
-if (!$cookieObj->read('PageViewCount')) {
-    $cookieObj->create('PageViewCount', 1, time() + 2 * 60 * 60);
-    echo "Вы впервые на нашем сайте!";
-} else {
-    $cookieObj->update('PageViewCount',$cookieObj->read('PageViewCount')+1,time() + 2 * 60 * 60);
-    echo "Вы на нашем сайте " . $cookieObj->read('PageViewCount') . "  раз";
-}
-
-//require_once($templates . 'header.php');
+require_once($templates . 'header.php');
 require_once(__DIR__ . '/helpers/FileUpload.php');
 
 ?>
